@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Todo</title>
+    <title>To-do List</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,16 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
+<div class="nav pull-left">
+  <li><%= link_to "Home", root_path %></li>
+    <% if user_signed_in? %>
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+        </li>
+
+  <% end %>
+</div>
+  
   <body>
   	<div class="container">
     <%= yield %>

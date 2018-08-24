@@ -16,6 +16,8 @@ end
 group :production do
   gem 'pg', '~> 0.18'
 end
+# Use devise for authenticating users
+gem 'devise', '~> 4.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
